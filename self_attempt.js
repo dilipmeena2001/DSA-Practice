@@ -94,21 +94,54 @@
 /* -----------------------------------------Linear Search------------------------------------------ */ 
 
 
-let arr = [-5,2,10,4,6]
-function linearSearch(arr,target){
-    for(let i=0;i<arr.length;i++){
-        if(arr[i] === target) return i
-    }
+// let arr = [-5,2,10,4,6]
+// function linearSearch(arr,target){
+//     for(let i=0;i<arr.length;i++){
+//         if(arr[i] === target) return i
+//     }
 
-    return -1
-}
+//     return -1
+// }
 
-console.log(linearSearch(arr,10))
-console.log(linearSearch(arr,6))
-console.log(linearSearch(arr,20))
-console.log(linearSearch(arr,-5))
+// console.log(linearSearch(arr,10))
+// console.log(linearSearch(arr,6))
+// console.log(linearSearch(arr,20))
+// console.log(linearSearch(arr,-5))
 
 /* ------------------------------------------------------------------------------------------------ */ 
+
+/* -------------------------------Recursive Binary Search------------------------------------------ */ 
+
+// function recursiveBinarySearch(
+//   arr,
+//   target,
+//   leftIndex = 0,
+//   rightIndex = arr.length - 1
+// ) {
+//   let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+
+//   if (arr[middleIndex] === target) {
+//     return middleIndex;
+//   }
+
+//   if (target < arr[leftIndex] || target > arr[rightIndex]) {
+//     return -1;
+//   }
+
+//   if (target < arr[middleIndex]) {
+//     rightIndex = middleIndex - 1;
+
+//     return recursiveBinarySearch(arr, target, leftIndex, rightIndex);
+//   } else if (target > arr[middleIndex]) {
+//     leftIndex = middleIndex + 1;
+
+//     return recursiveBinarySearch(arr, target, leftIndex, rightIndex);
+//   }
+// }
+
+// console.log(recursiveBinarySearch([-5, 2, 4, 6, 10, 12], 12));
+
+// 
 
 
 
