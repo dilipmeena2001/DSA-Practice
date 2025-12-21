@@ -13,4 +13,4 @@ function insertionSort(arr){
 
 let arr = [-6,20,8,-2,4]
 insertionSort(arr)
-console.log("🚀 ~ arr:", arr)
+console.log(arr)
