@@ -1,28 +1,15 @@
-function mergeSort(arr) {
-  if (arr.length < 2) {
-    return arr;
-  }
-
-  let mid = Math.floor(arr.length / 2);
-  let leftArr = arr.slice(0, mid);
-  let rightArr = arr.slice(mid);
-
-  return merge(mergeSort(leftArr), mergeSort(rightArr));
-}
-
-function merge(leftArr, rightArr) {
-  let tempArr = [];
-
-  while (leftArr.length && rightArr.length) {
-    if (leftArr[0] <= rightArr[0]) {
-      tempArr.push(leftArr.shift());
-    } else {
-      tempArr.push(rightArr.shift());
+function cartesianProduct(set_A,set_B){
+    const result = []
+    for(let i=0;i<set_A.length;i++){
+        for(let j=0; j < set_B.length;j++){
+            result.push([set_A[i], set_B[j]])
+        }
     }
-  }
 
-  return [...tempArr, ...leftArr, ...rightArr];
+    return result
 }
 
-let arr = [-6, 20, 8, -2, 4];
-console.log("🚀 ~ arr:", mergeSort(arr));
+const set_A = [1,2];
+const set_B = [3,4]
+
+console.log("🚀 ~ cartesianProduct ~ cartesianProduct:", cartesianProduct(set_A, set_B))
