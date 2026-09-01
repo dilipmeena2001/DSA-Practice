@@ -1,13 +1,37 @@
-function towerOfHanoi(n, fromRod, toRod, usingRod){
-    if(n === 1){
-        console.log(`Move disk 1 from ${fromRod} to ${toRod}`)
-        return
-    }
+function createStack(elements) {
+  const items = [...elements];
 
-    towerOfHanoi(n-1, fromRod, usingRod, toRod)
-    console.log(`Move ${n} disk from ${fromRod} to ${toRod}`)
+  const isEmpty = () => !items.length;
 
-    towerOfHanoi(n-1, usingRod, toRod, fromRod)
+  return {
+    push(element) {
+      items.push(element);
+    },
+    pop() {
+      if (isEmpty()) return "No elements to remove";
+      return items.pop();
+    },
+    peek() {
+      if (isEmpty()) return "Stack is empty";
+      return items[items.length - 1];
+    },
+    isEmpty,
+    clear() {
+      items.length = 0;
+    },
+    size() {
+      return items.length;
+    },
+  };
 }
 
-towerOfHanoi(3,"A", "C", "B")
+const fruits = createStack(["mango", "banana", "chilli"]);
+
+const cars = createStack(["Dzire", "Scorpio-N"])
+
+fruits.pop();
+fruits.push("Pineapple");
+
+console.log(fruits.size());
+console.log(cars.size());
+
