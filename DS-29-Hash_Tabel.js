@@ -9,7 +9,7 @@ class HashTable {
         for (let i = 0; i < key.length; i++) {
             total += key.charCodeAt(i)            
         }
-        return total
+        return total % this.size
     }
 
     set(key,value){
